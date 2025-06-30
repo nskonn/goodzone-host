@@ -64,13 +64,14 @@ export default {
         extensions: ['.tsx', '.ts', '.js', '.jsx'],
         alias: {
             pages: path.resolve(__dirname, 'src/pages'),
+            routing: path.resolve(__dirname, 'src/routing'),
         },
     },
     plugins: [
         new webpack.container.ModuleFederationPlugin({
             name: 'host',
             remotes: {
-                remoteApp: 'remoteApp@http://localhost:3000/remoteEntry.js',
+                remoteApp: 'remoteApp@http://localhost:3001/remoteEntry.js',
             },
             shared: {
                 ...createSharedConfig(SHARED_MODULES),

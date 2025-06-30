@@ -21,12 +21,10 @@
     "checks": "run-s format lint build"
   },
   "dependencies": {
-    "html-webpack-plugin": "^5.6.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.2",
-    "styled-components": "^6.1.19",
-    "webpack": "^5.99.9"
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
     "@babel/core": "^7.27.7",
@@ -48,7 +46,9 @@
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.8.3",
+    "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1",
+    "html-webpack-plugin": "^5.6.3",
     "webpack-dev-server": "^5.2.2"
   }
 }

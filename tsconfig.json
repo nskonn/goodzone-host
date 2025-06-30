@@ -16,7 +16,8 @@
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "paths": {
-            "pages/*": ["pages/*"]
+            "pages/*": ["pages/*"],
+            "routing/*": ["routing/*"]
         }
     },
     "exclude": ["node_modules", "dist"],
