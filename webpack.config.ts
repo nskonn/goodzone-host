@@ -2,14 +2,35 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-import { container } from 'webpack';
+import webpack from 'webpack';
 
-const { ModuleFederationPlugin } = container;
+// @ts-ignore
+import { SHARED_MODULES } from './tools/consts.ts';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+type SharedConfig = {
+    singleton: boolean;
+    requiredVersion: string | false;
+};
+
+type Shared = {
+    [packageName: string]: SharedConfig;
+};
+
+const createSharedConfig = (modules: string[]) => {
+    return modules.reduce<Shared>((shared, pkg) => {
+        shared[pkg] = {
+            singleton: true,
+            requiredVersion: false,
+        };
+        return shared;
+    }, {});
+};
+
 export default {
-    entry: './src/index.js',
+    entry: './src/app/index.tsx',
     mode: 'development',
     devServer: {
         port: 3000,
@@ -24,24 +45,45 @@ export default {
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.[jt]sx?$/,
                 exclude: /node_modules/,
-                use: 'babel-loader',
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            '@babel/preset-env',
+                            '@babel/preset-react',
+                            '@babel/preset-typescript',
+                        ],
+                    },
+                },
             },
         ],
     },
     resolve: {
-        extensions: ['.js', '.jsx'],
+        extensions: ['.tsx', '.ts', '.js', '.jsx'],
+        alias: {
+            pages: path.resolve(__dirname, 'src/pages'),
+        },
     },
     plugins: [
-        new ModuleFederationPlugin({
+        new webpack.container.ModuleFederationPlugin({
             name: 'host',
             remotes: {
-                remoteApp: 'remoteApp@http://localhost:3001/remoteEntry.js',
+                remoteApp: 'remoteApp@http://localhost:3000/remoteEntry.js',
             },
             shared: {
-                react: { singleton: true, requiredVersion: '^18.0.0' },
-                'react-dom': { singleton: true, requiredVersion: '^18.0.0' },
+                ...createSharedConfig(SHARED_MODULES),
+                react: {
+                    singleton: true,
+                    requiredVersion: '^18.0.0',
+                    eager: false,
+                },
+                'react-dom': {
+                    singleton: true,
+                    requiredVersion: '^18.0.0',
+                    eager: false,
+                },
             },
         }),
         new HtmlWebpackPlugin({
