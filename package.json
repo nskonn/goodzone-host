@@ -27,6 +27,7 @@
     "styled-components": "^6.1.19"
   },
   "devDependencies": {
+    "express": "^5.1.0",
     "@babel/core": "^7.27.7",
     "@babel/plugin-transform-runtime": "^7.27.4",
     "@babel/preset-env": "^7.27.2",
@@ -41,6 +42,7 @@
     "babel-loader": "^10.0.0",
     "babel-plugin-styled-components": "^2.1.4",
     "eslint": "^9.30.0",
+    "html-webpack-plugin": "^5.6.3",
     "prettier": "^3.6.2",
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
@@ -48,7 +50,6 @@
     "typescript": "^5.8.3",
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1",
-    "html-webpack-plugin": "^5.6.3",
     "webpack-dev-server": "^5.2.2"
   }
 }
