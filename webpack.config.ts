@@ -35,7 +35,7 @@ export default {
     devServer: {
         port: 3000,
         historyApiFallback: true,
-        static: path.join(__dirname, 'public'),
+        static: path.join(__dirname, 'dist'),
         hot: true,
     },
     output: {
@@ -65,24 +65,25 @@ export default {
         alias: {
             pages: path.resolve(__dirname, 'src/pages'),
             routing: path.resolve(__dirname, 'src/routing'),
+            home: path.resolve(__dirname, 'src/home'),
+            shared: path.resolve(__dirname, 'src/shared'),
         },
     },
     plugins: [
         new webpack.container.ModuleFederationPlugin({
             name: 'host',
+            filename: 'remoteEntry.js',
             remotes: {
-                remoteApp: 'remoteApp@http://localhost:3001/remoteEntry.js',
+                home: 'home@http://localhost:3001/remoteEntry.js',
             },
             shared: {
                 ...createSharedConfig(SHARED_MODULES),
                 react: {
                     singleton: true,
-                    requiredVersion: '^18.0.0',
                     eager: false,
                 },
                 'react-dom': {
                     singleton: true,
-                    requiredVersion: '^18.0.0',
                     eager: false,
                 },
             },

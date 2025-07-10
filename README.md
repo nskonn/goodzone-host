@@ -1,4 +1,4 @@
-# Микрофронт goodzone_host
+# Микрофронт goodzone-host
 
 ## Скрипты
 

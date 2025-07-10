@@ -17,7 +17,9 @@
         "forceConsistentCasingInFileNames": true,
         "paths": {
             "pages/*": ["pages/*"],
-            "routing/*": ["routing/*"]
+            "routing/*": ["routing/*"],
+            "home/*": ["home/*"], // микрофронтенд home
+            "shared/*": ["shared/*"]
         }
     },
     "exclude": ["node_modules", "dist"],
