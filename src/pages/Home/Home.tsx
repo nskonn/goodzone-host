@@ -1,11 +1,14 @@
 import React, { Suspense } from 'react';
+
 // @ts-ignore
-const HomePageMF = React.lazy(() => import('home/HomePageMF'));
+const HomePageModule = React.lazy(() => import('home/HomePageModule'));
 
 export const Home = () => {
     return (
         <Suspense fallback={<div>Загрузка...</div>}>
-            <HomePageMF />
+            <HomePageModule />
         </Suspense>
     );
 };
+
+export default Home;
