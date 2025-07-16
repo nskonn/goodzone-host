@@ -47,6 +47,10 @@ export default (env: Record<string, string>) => {
         module: {
             rules: [
                 {
+                    test: /\.(?:ico|gif|png|jpg|jpeg|woff|woff2|eot|ttf)$/i,
+                    type: 'asset/resource',
+                },
+                {
                     test: /\.[jt]sx?$/,
                     exclude: /node_modules/,
                     use: {
@@ -69,6 +73,7 @@ export default (env: Record<string, string>) => {
                 routing: path.resolve(__dirname, 'src/routing'),
                 home: path.resolve(__dirname, 'src/home'),
                 shared: path.resolve(__dirname, 'src/shared'),
+                assets: path.resolve(__dirname, 'src/assets'),
             },
         },
         plugins: [
