@@ -19,9 +19,10 @@
             "pages/*": ["pages/*"],
             "routing/*": ["routing/*"],
             "home/*": ["home/*"], // микрофронтенд home
-            "shared/*": ["shared/*"]
+            "shared/*": ["shared/*"],
+            "assets/*": ["assets/*"]
         }
     },
     "exclude": ["node_modules", "dist"],
-    "include": ["src", "tools/**/*.ts", "webpack.config.ts"]
+    "include": ["src", "tools/**/*.ts", "webpack.config.ts", "@types"]
 }

@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     /* Основной брендовый цвет — Оранжевый */
     --color-primary: #FF6B00;          /* фирменный оранжевый */
     --color-primary-hover: #e35f00;
+    --color-primary-active: #FFA500FF;
 
     /* Акцент */
     --color-accent: #FF2E63;           /* контрастный акцент */
@@ -16,10 +17,12 @@ export const GlobalStyle = createGlobalStyle`
     --color-bg-hover: #F0F0F0;
 
     /* Цвета текста */
-    --color-text-primary: #1F1F1F;
+    --color-text-primary: #070707;
     --color-text-secondary: #6A6A6A;
     --color-text-inverse: #FFFFFF;
-    --color-link: #FF6B00;             /* ссылка = оранжевая */
+    --color-link: #FF6B00;
+    --color-pozitive: #10c44c;
+    --color-sale: #F1117EFF;
 
     /* Границы и интерфейс */
     --color-border: #DCDCDC;
