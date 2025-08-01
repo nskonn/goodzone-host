@@ -11,54 +11,53 @@ import Onest600Woff from './Onest-SemiBold.woff';
 import Onest700Woff2 from './Onest-Bold.woff2';
 import Onest700Woff from './Onest-Bold.woff';
 
-
 export const GlobalFonts = createGlobalStyle`
-  @font-face {
-    font-family: 'Onest';
-    src: url(${Onest300Woff2}) format('woff2'), /* Предпочтительный WOFF2 */
-         url(${Onest300Woff}) format('woff');   /* Резервный WOFF */
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap; 
-  }
+    @font-face {
+        font-family: 'Onest';
+        src: url(${Onest300Woff2}) format('woff2'), /* Предпочтительный WOFF2 */ url(${Onest300Woff}) format('woff');   /* Резервный WOFF */
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+    }
 
-  @font-face {
-    font-family: 'Onest';
-    src: url(${Onest400Woff2}) format('woff2'),
-         url(${Onest400Woff}) format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
+    @font-face {
+        font-family: 'Onest';
+        src: url(${Onest400Woff2}) format('woff2'),
+        url(${Onest400Woff}) format('woff');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
 
-  @font-face {
-    font-family: 'Onest';
-    src: url(${Onest500Woff2}) format('woff2'),
-         url(${Onest500Woff}) format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
+    @font-face {
+        font-family: 'Onest';
+        src: url(${Onest500Woff2}) format('woff2'),
+        url(${Onest500Woff}) format('woff');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
 
-  @font-face {
-    font-family: 'Onest';
-    src: url(${Onest600Woff2}) format('woff2'),
-         url(${Onest600Woff}) format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'Onest';
-    src: url(${Onest700Woff2}) format('woff2'),
-         url(${Onest700Woff}) format('woff');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
+    @font-face {
+        font-family: 'Onest';
+        src: url(${Onest600Woff2}) format('woff2'),
+        url(${Onest600Woff}) format('woff');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+    }
 
-  body {
-    font-family: 'Onest', sans-serif;
-  }
+    @font-face {
+        font-family: 'Onest';
+        src: url(${Onest700Woff2}) format('woff2'),
+        url(${Onest700Woff}) format('woff');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    body {
+        font-family: 'Onest', sans-serif;
+        font-size: 14px;
+    }
 `;

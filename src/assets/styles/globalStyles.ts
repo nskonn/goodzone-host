@@ -19,9 +19,10 @@ export const GlobalStyle = createGlobalStyle`
     /* Цвета текста */
     --color-text-primary: #070707;
     --color-text-secondary: #6A6A6A;
+    --color-text-light: #99a3ae;
     --color-text-inverse: #FFFFFF;
     --color-link: #FF6B00;
-    --color-pozitive: #10c44c;
+    --color-positive: #10c44c;
     --color-sale: #F1117EFF;
 
     /* Границы и интерфейс */
